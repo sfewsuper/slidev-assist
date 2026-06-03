@@ -76,6 +76,117 @@ title: 标题
 - `statement` — 引语/强调页
 - `default` — 默认页，标题在左上角
 
+## 🎨 更改风格（主题/配色/字体）
+
+Slidev 的风格通过 headmatter（第一页 `---` 之间的配置）控制。最常用的三种方式：
+
+### 方式一：切换内置主题
+
+```yaml
+---
+theme: default     # 默认简洁风（白底黑字）
+# 或
+theme: seriph      # 衬线字体风格（偏正式/学术）
+# 或
+theme: unocss      # UnoCSS 驱动，高度可自定义
+---
+```
+
+直接在 headmatter 里改 `theme:` 的值即可切换整体风格。
+
+### 方式二：安装社区主题
+
+```bash
+npm install slidev-theme-xxx
+```
+
+热门社区主题：
+
+| 主题包 | 风格 |
+|:-------|:-----|
+| `slidev-theme-meetup` | 聚会/活动风格 |
+| `slidev-theme-the-unnamed` | 深色科技风 |
+| `slidev-theme-penguin` | 可爱企鹅风 |
+| `slidev-theme-unicorn` | 多彩独角兽风 |
+
+安装后 headmatter 里引用：
+
+```yaml
+---
+theme: penguin
+---
+```
+
+### 方式三：自定义配色和字体（无需装主题）
+
+不改 theme，直接在 headmatter 里覆盖：
+
+```yaml
+---
+theme: default
+fonts:
+  sans: Inter          # 正文字体
+  mono: Fira Code      # 等宽字体（代码用）
+  weights: '300,400,600'
+  provider: google     # 字体来源（google / none）
+colorSchema: light     # light / dark / auto
+---
+```
+
+### 📌 每个页面可以单独设 layout
+
+同一份 PPT 里不同页可以有不同的布局：
+
+```yaml
+---
+layout: cover    # 封面页（大标题居中）
+---
+
+# 标题
+
+---
+
+---
+layout: two-cols  # 左右两栏
+---
+
+# 左栏
+
+::right::
+
+# 右栏
+
+---
+
+---
+layout: center   # 内容居中
+---
+
+# 居中展示
+```
+
+常用 layout 一览：
+
+| layout | 用途 | 效果 |
+|:-------|:-----|:-----|
+| `default` | 通用内容页 | 标题在左上角 |
+| `center` | 强调内容 | 全部居中 |
+| `cover` | 封面 | 大标题居中，适合第一页 |
+| `section` | 章节过渡 | 深色背景，大字标题 |
+| `two-cols` | 对比/并列 | 左右两栏 |
+| `image-right` | 左文右图 | 需设 `image:` 字段 |
+| `image-left` | 左图右文 | 需设 `image:` 字段 |
+| `statement` | 引语/金句 | 大字居中引语 |
+| `fact` | 数据突出 | 大数字展示 |
+
+### 💡 给 AI 的指令
+
+如果用户说"换个风格"、"改主题"、"调配色"、"换字体"：
+1. 优先用方式一（切内置 theme）——最快
+2. 如果内置 theme 不够，尝试方式三（改 headmatter 的 fonts/colorSchema）
+3. 如果用户想要特定风格且内置没有，尝试方式二（安装社区主题）
+4. 如果用户说"这页布局不对"，修改对应页的 `layout:` 字段
+
 ## 语法特性
 
 ### 分隔内容
