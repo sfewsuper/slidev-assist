@@ -7,6 +7,20 @@
 
 ---
 
+## ⚠️ 关于本项目
+
+**Slidev Assist 不是一个独立或原创的软件，而是一个调用开源项目的辅助工具。**
+
+它的核心依赖是 [**Slidev**](https://github.com/slidevjs/slidev)（一个用 Markdown 写 PPT 的开源项目，MIT 协议），项目地址：
+
+👉 **https://github.com/slidevjs/slidev**
+
+Slidev 能生成效果酷炫的演示内容，但对电脑小白来说门槛较高——需要装 Node.js、记 Markdown 语法和 frontmatter 配置。
+
+**Slidev Assist 的作用就是让小白也能用上这个好工具：你不需要懂命令行，不需要记语法，只要给个主题或原材料，5 分钟内就能生成一份可用的演示内容。**
+
+---
+
 ## 什么是 Slidev Assist？
 
 [Slidev](https://sli.dev) 是一个用 Markdown 写 PPT 的工具——但小白入门门槛高（要装 Node.js、记语法、搞 frontmatter）。

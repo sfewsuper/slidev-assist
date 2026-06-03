@@ -11,3 +11,10 @@
 - 导出命令支持（PDF / PPTX / PNG）
 - PPTX 反解支持（python-pptx 提取 + AI 重建）
 - 内容溢出检测与自动拆页策略
+
+## 1.0.1 (2026-06-03)
+
+### 🛠️ 改进
+- 加入环境检测与 Slidev 安装指令
+- 明确声明依赖 Slidev 开源项目 (https://github.com/slidevjs/slidev)
+- 补充多种安装方式和推荐操作流程

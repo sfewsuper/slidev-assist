@@ -195,7 +195,7 @@ fonts:
 1. **你**：提供原材料（主题/文件/数据/文案...）
 2. **我**：解析原材料 → 提炼要点 → 结构化成 slides.md
 3. **你**：确认/修改内容
-4. **我**：自动运行 `npx @slidev/cli --remote` 启动预览
+4. **我**：检测环境 → 如未安装 Slidev 则自动安装 → 启动预览
 5. **你**：浏览器打开链接即可查看/演示
 
 ## 支持解析的原材料类型
@@ -223,9 +223,72 @@ npx slidev export slides.md --format pptx
 npx slidev export slides.md --format png
 ```
 
+## 环境依赖声明
+
+> ⚠️ **Slidev Assist 不是一个独立软件，而是一个调用开源项目的辅助工具。**
+> 核心依赖是 [**Slidev**](https://github.com/slidevjs/slidev)（MIT 协议），
+> 项目地址：https://github.com/slidevjs/slidev
+
+每次生成 PPT 前必须确保目标环境已安装 Slidev。以下是检测和安装方式。
+
+### 检测 Slidev 是否已安装
+
+```bash
+# 方式一：检查 CLI 是否可用
+npx --yes @slidev/cli --version 2>/dev/null
+
+# 方式二：检查本地 node_modules
+test -d node_modules && npm ls @slidev/cli 2>/dev/null
+```
+
+有版本号返回 → 已安装。报错 → 执行安装。
+
+### 安装 Slidev
+
+```bash
+# 方式一：npx 自动缓存（最省事，不需要手动装）
+# npx @slidev/cli 首次运行会自动下载
+
+# 方式二：npm 本地安装（推荐，支持导出）
+cd 项目目录
+npm install @slidev/cli
+
+# 方式三：npm 全局安装
+npm install -g @slidev/cli
+
+# 方式四：官方 init 方式
+npm init slidev
+```
+
+### 导出额外依赖
+
+如需导出 PDF/PPTX，还需要 Playwright：
+
+```bash
+npm install -D playwright-chromium
+```
+
+### 推荐操作流程
+
+```bash
+# 1. 初始化项目
+echo '{"name":"ppt","private":true}' > package.json
+
+# 2. 安装 Slidev
+npm install @slidev/cli
+
+# 3. （可选）安装导出依赖
+npm install -D playwright-chromium
+
+# 4. 启动预览
+npx @slidev/cli slides.md --remote
+```
+
+官方安装指南：https://github.com/slidevjs/slidev#getting-started
+
 ## 注意事项
 
-- 首次运行会自动安装依赖，需要一些时间
+- 首次运行 `npm install` 会耗时 1-3 分钟（下载依赖包）
 - 预览默认在 `http://localhost:3030`
 - 用 `--remote` 可以让手机上控制翻页
 - 主题可以 npm 安装：`npm i slidev-theme-xxx`
