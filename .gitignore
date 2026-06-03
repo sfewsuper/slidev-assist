@@ -1,0 +1,6 @@
+node_modules/
+.clawhub/
+_meta.json
+*.log
+slides-export.*
+.DS_Store
