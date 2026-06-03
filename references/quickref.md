@@ -1,4 +1,4 @@
-# Slidev Maker
+# Slidev Assist
 
 🎨 **主题参考**
 - `default` — 默认简洁主题

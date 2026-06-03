@@ -1,4 +1,4 @@
-# Slidev Maker 🦐📽️
+# Slidev Assist 🦐📽️
 
 **一个 AI Skill：任何原材料 → AI 解析 → Slidev PPT → 一键预览+导出。**
 
@@ -7,11 +7,11 @@
 
 ---
 
-## 什么是 Slidev Maker？
+## 什么是 Slidev Assist？
 
 [Slidev](https://sli.dev) 是一个用 Markdown 写 PPT 的工具——但小白入门门槛高（要装 Node.js、记语法、搞 frontmatter）。
 
-**Slidev Maker 是一个 OpenClaw Skill，让 AI 替你完成从"原材料"到"PPT"的全过程。**
+**Slidev Assist 是一个 OpenClaw Skill，让 AI 替你完成从"原材料"到"PPT"的全过程。**
 
 > **你给什么，我就能做什么。**
 > 一个主题 → 做成 PPT
@@ -37,10 +37,10 @@
 
 ```bash
 # 通过 ClawHub
-openclaw skills install slidev-maker
+openclaw skills install slidev-assist
 
 # 或从 GitHub 本地安装
-openclaw skills install ./slidev-maker
+openclaw skills install ./slidev-assist
 ```
 
 ### 使用
@@ -75,7 +75,7 @@ AI 会自动完成：**解析 → 提炼 → 结构化 → 生成 slides.md → 
 ## 🗂️ 项目结构
 
 ```
-slidev-maker/
+slidev-assist/
 ├── SKILL.md               ← AI 语法指南 + 工作流
 ├── metadata.json          ← 元数据
 ├── references/
@@ -150,10 +150,10 @@ AI：添加 v-click 过渡
 
 ```bash
 # ClawHub 发布
-clawhub publish ./slidev-maker --slug slidev-maker --name "Slidev Maker" --version 1.0.0
+clawhub publish ./slidev-assist --slug slidev-assist --name "Slidev Assist" --version 1.0.0
 
 # 本地安装测试
-openclaw skills install ./slidev-maker
+openclaw skills install ./slidev-assist
 ```
 
 ---

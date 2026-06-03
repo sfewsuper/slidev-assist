@@ -1,12 +1,12 @@
 ---
-name: slidev-maker
+name: slidev-assist
 description: "接受主题或任何原材料（研究报告、数据、文案、PPTX等），由AI解析后生成Markdown再调用Slidev输出可演示的HTML幻灯片"
 metadata:
   kanji_name: "幻灯制作"
   emoji: "📽️"
 ---
 
-# Slidev Maker
+# Slidev Assist
 
 使用 [Slidev](https://sli.dev)（Presentation Slides for Developers）从 Markdown 生成 PPT。**你给任何原材料——一个主题、一份研究报告、一堆数据、一段文案、一个现成的PPTX——我来解析、提炼、结构化成 slides.md，一键生成可演示的 HTML 幻灯片。**
 

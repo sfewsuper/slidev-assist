@@ -1,3 +1,3 @@
-# Slidev Maker 🦐📽️
+# Slidev Assist 🦐📽️
 
-> 你给主题，AI 做 PPT — Markdown 一键生成可演示的幻灯片
+> 接受主题或任何原材料 → AI解析 → Slidev PPT → 一键预览+导出
